@@ -10,6 +10,15 @@ brew install kafka
 brew install kafka-python
 ```
 
+__Nota Bene 2022:__ _If you're running on a M1 Mac, take a look at the bottom of the page._
+
+## Running Kafka
+
+There are a couple shell scripts for running `zookeeper` and `kafka`.
+You need to run `zookeeper` first in a terminal by itself.
+Then run `kafka` in a different terminal.
+
+Then run the `Producers` and `consumers` each in their own terminals. (as needed)
 
 ## ZipBank Project
 
