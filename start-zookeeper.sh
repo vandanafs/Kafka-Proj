@@ -1,4 +1,4 @@
-#!/bin/bash
+d#!/bin/bash
 MACHARCH=`uname -m`
 MACM1="arm64"
 

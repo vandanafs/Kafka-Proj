@@ -8,18 +8,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-#name = os.getenv('vandana')
-#pswd = os.getenv('Data@223')
-#my_sql= 'mysql+mysqlconnector://' + name + ":" + pswd + '@localhost/bank'
-#engine=create_engine(my_sql)
-
-#Session.configure()
-#Base = declarative_base(bind=engine)
-
-#using sqlalchey
-#engine=create_engine("sqlite:///bank_al.db")
-#session=sessionmaker(bind=engine)()
-#Base = declarative_base()
 
 db_name = 'zipbank'
 user = getpass.getuser()
@@ -69,9 +57,8 @@ class XactionConsumer:
                # connection.execute('insert into transactions ({0}, {1}, {2}, {3})'.format(message['custid'], message['type'], message['date'], message['amt']))
                 connection.execute("insert into transactions(custid,type,date,amt) values (%s,%s,%s,%s)",(message['custid'],message['type'],message['date'],message['amt']))
 
-            #with engine.connect() as connection:
-               # connection.execute("insert into transaction(custid,type,date,amt) values (%s,%s,%s,%s)",(message['custid'],message['type'],message['date'],message['amt']))
-                 #message_to_sqltable = Transaction(custid=message['custid'], type = message['type'], date=message['date'], amt=message['amt'])
+          
+                
             if message['custid'] not in self.custBalances:
                 self.custBalances[message['custid']] = 0
             if message['type'] == 'dep':
@@ -79,10 +66,7 @@ class XactionConsumer:
             else:
                 self.custBalances[message['custid']] -= message['amt']
             print(self.custBalances)
-           # Session = sessionmaker()
-           # session = Session()
-            #session.add(message_to_sqltable)
-            #session.commit()
+          
 
 
 

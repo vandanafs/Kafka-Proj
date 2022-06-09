@@ -1,0 +1,22 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="exercise2.name_input1" />
+          <option value="small_town_teller.last_name" />
+          <option value="small_town_teller.first_name" />
+          <option value="airflow.operators.papermill_operator.PapermillOperator" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
